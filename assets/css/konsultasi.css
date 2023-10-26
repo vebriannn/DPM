@@ -1,0 +1,185 @@
+
+/* color */
+:root {
+    --color-lighblue1: #0063FF;
+    --color-lighblue2: #4365DE;
+    --color-darkblue: #001D83;
+    --color-white: #FFFFFF;
+    --color-black: #262626;
+    --color-yellow: #E8C018;
+}
+
+/* font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Maven+Pro:wght@400;500;600;700&display=swap');
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: "Poppins", sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* bagian dark mode */
+.dark-body, .dark-navbar {
+    background-color: var(--color-black) !important;
+}
+
+.dark-text {
+    color: var(--color-white) !important;
+    transition: 0.3s ease-in-out;
+}
+
+.dark-btn {
+    background-color: var(--color-white) !important;
+    color: var(--color-black) !important;
+}
+
+.dark-shadow {
+    box-shadow: 0 0.4rem 1rem rgba(0, 99, 255, 13%) !important;
+}
+
+h1, p, img {
+    transition: 0.3s ease-in-out;
+}
+
+.dark-img {
+    filter: brightness(10);
+}
+
+/* bagian navbar */
+body {
+    background-color: var(--color-white);
+    transition: 0.3s ease-in-out;
+}
+
+/* bagian navbar */
+.navbar-section .navbar {
+    background-color: var(--color-white);
+    transition: 0.3s ease-in-out;
+}
+
+.navbar-section .navbar.shadow {
+    box-shadow: 0 0.4rem 1rem rgba(184, 184, 184, 22%) !important;
+}
+
+.navbar-section .navbar-brand, .active {
+    font-weight: 700;
+    width: max-content;
+    background: -webkit-linear-gradient(70deg, #00239F, #002ECF);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.navbar-section .navbar-nav .nav-item .nav-link {
+    font-weight: 700;
+    color: var(--color-black);
+    transition: 0.3s ease-in-out;
+}
+
+.navbar-section .navbar-nav .nav-item .nav-link:hover {
+    color: #00239F !important;
+}
+
+.navbar-section .navbar-nav .nav-item .btn-mode {
+    background-color: var(--color-yellow);
+    border-radius: 100px;
+    width: max-content;
+    height: max-content;
+    padding: 4px 8px;
+    color: var(--color-white);
+    transition: 0.3s ease-in-out;
+}
+
+.navbar-section .navbar-nav .nav-item .btn-mode:hover {
+    transform: scale(0.9);
+}
+
+.section1 {
+    width: 100%;
+    height: 100vh;
+    margin-top: 60px;
+    background-image: url(../images/images-blur-4.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+}
+
+.section1 .images-icon {
+    position: absolute;
+    top: 60px;
+}
+
+.section1 .container-fluid h1 {
+    font-family: "Maven Pro", sans-serif;
+    font-weight: 700;
+}
+
+.section1 .container-fluid .text .btn-show-form-konsultasi .btn-konsultasi {
+    background: linear-gradient(#4365DE, #001D83);
+    border: none;
+    transition: 0.3s ease-in-out;
+    color: var(--color-white);
+}
+
+.section1 .container-fluid .text .btn-show-form-konsultasi .btn-konsultasi:hover {
+    transform: scale(0.9);
+}
+
+.section2 {
+    height: 80vh;
+    margin-top: 60px;
+    /* display: none; */
+}
+
+.section2 .container h1 {
+    font-family: "Maven Pro", sans-serif;
+    font-weight: 700;
+    background: -webkit-linear-gradient(70deg, #00239F, #002ECF);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.section2 .container img{
+    width: 80%;
+    margin: 0 auto;
+}
+
+.section2 .container .card{
+    width: 80%;
+    height: 280px;
+    margin: 60px auto 0 auto;
+    background: -webkit-linear-gradient(150deg, #00239F, #002ECF);
+}
+
+.section2 .container .card .card-body p, 
+.section2 .container .card .card-body h3 {
+    color: var(--color-white);
+}
+
+.section2 .container .card .card-body .button-confirm {
+    width: 80%;
+    display: flex;
+    justify-content: space-around;
+}
+
+.section2 .container .card .card-body .button-confirm .btn-ya,
+.section2 .container .card .card-body .button-confirm .btn-no {
+    background-color: var(--color-white);
+    color: var(--color-black);
+    width: 30%;
+    padding: 0.5rem 1rem;
+    border-radius: 12px;
+    outline: none;
+    border: none;
+    transition: 0.3s ease-in-out;
+}
+
+.section2 .container .card .card-body .button-confirm .btn-ya:hover,
+.section2 .container .card .card-body .button-confirm .btn-no:hover {
+    transform: scale(0.9);
+}
