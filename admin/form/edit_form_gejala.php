@@ -32,27 +32,24 @@
                 <div class="col-10 content p-0 ">
                     <div class="container">
                         <div class="card mt-5" style="width: 90%; margin: 0 auto;">
-                            <form action="../php/update.php" method="POST">
+                            <form action="../../php/update.php" method="POST">
                                 <div class="card-header">
                                     <h3 class="m-0 p-0">Edit Data</h3>
                                 </div>
                                 <div class="card-body pb-0">    
                                     <div class="mb-3">
-                                        <label for="kodePenyakit" class="form-label">Kode Penyakit</label>
+                                        <label for="kodeGejala" class="form-label">Kode Gejala</label>
                                         <input type="hidden" name="id" value="<?= $_GET['edit']?>">
-                                        <input type="text" class="form-control" name="kode_penyakit" id="kodePenyakit" placeholder="Kode Penyakit" value="<?= $_GET['kode']?>" required>
+                                        <input type="hidden" name="action" value="<?= $_GET['action']?>">
+                                        <input type="text" class="form-control" name="kode_gejala" id="kodeGejala" value="<?= $_GET['kode']?>" readonly>
                                     </div>
                                     <div class="mb-3">
                                         <label for="gejala" class="form-label">Gejala</label>
                                         <input type="text" class="form-control" name="gejala" id="gejala" placeholder="Gejala" required>
                                     </div>
-                                    <div class="mb-3">
-                                        <label for="solusi" class="form-label">Solusi</label>
-                                        <textarea class="form-control" id="solusi" rows="8" name="solusi" required></textarea>
-                                    </div>
                                 </div>
                                 <div class="card-footer d-flex justify-content-center bg-white border-0 pb-4">
-                                    <button type="submit" class="btn btn-success pt-2 pb-2 w-25 fs-6" data-bs-toggle="modal" name="update">Tambah</button>
+                                    <button type="submit" class="btn btn-success pt-2 pb-2 w-25 fs-6" name="update">Tambah</button>
                                 </div>
                             </form>
                         </div>

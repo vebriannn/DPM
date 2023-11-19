@@ -3,7 +3,8 @@
 require "../php/db.php";
 
 
-$query = mysqli_query($db, "SELECT * FROM data_stadium");
+$query = mysqli_query($db, "SELECT * FROM data_hiv");
+
 
 ?>
 
@@ -14,10 +15,10 @@ $query = mysqli_query($db, "SELECT * FROM data_stadium");
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Dashboard || Penyakit</title>
+    <title>Dashboard || Gejala</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
-    <link rel="stylesheet" href="../assets/css/dasboard.css?v=<?php time()?>">
+    <link rel="stylesheet" href="../assets/css/dasboard.css?v=<?php time() ?>">
 </head>
 
 <body>
@@ -38,10 +39,10 @@ $query = mysqli_query($db, "SELECT * FROM data_stadium");
                                 <div class="dropdown-nav collapse " id="collapseExample">
                                     <ul class="p-0 m-0 ">
                                         <li class="pb-2">
-                                            <a class="btn p-0 " href="index.php">Lihat Gejala</a>
+                                            <a class="btn p-0 active-nav" href="#">Lihat Gejala</a>
                                         </li>
                                         <li class="pb-2">
-                                            <a class="btn p-0 active-nav" href="#">Lihat Stadium</a>
+                                            <a class="btn p-0" href="dashboard.php">Lihat Stadium</a>
                                         </li>
                                     </ul>
                                 </div>
@@ -60,9 +61,11 @@ $query = mysqli_query($db, "SELECT * FROM data_stadium");
                                     <input type="search" class="form-control shadow-none" placeholder="Search" controls="tabelDataa">
                                 </div>
                             </div>
-                            <div class="col-5 d-flex justify-content-end gap-4 d-none">
-                                <a href="" class="btn btn-primary opacity-50" >Lihat Gejala</a>
-                                <a href="dashboard_stadium.php" class="btn btn-primary ">Lihat Stadium</a>
+                            <div class="col-5 d-flex justify-content-end gap-4 ">
+                                <button class="btn btn-sm fs-6 px-2 p-0 m-0" type="button" data-bs-toggle="dropdown"><span><i class="bi bi-person-fill-check fs-4"></i></span> Jasim </button>
+                                <ul class="dropdown-menu mt-2">
+                                    <li><a class="dropdown-item fs-6" href="../php/logout.php">Logout</a></li>
+                                </ul>
                             </div>
                         </div>
                     </div>
@@ -77,20 +80,20 @@ $query = mysqli_query($db, "SELECT * FROM data_stadium");
                                 <table class="table shadow text-center ">
                                     <thead>
                                         <tr>
-                                            <th scope="col">KODE STADIUM</th>
-                                            <th scope="col">STADIUM</th>
+                                            <th scope="col">KODE PENYAKIT</th>
+                                            <th scope="col">GEJALA</th>
                                             <th scope="col">ACTION</th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         <?php while ($data = mysqli_fetch_array($query)) { ?>
                                             <tr>
-                                                <td class="text-capitalize"><?= $data['kode_stadium'] ?></td>
-                                                <td class="text-capitalize"><?= $data['stadium'] ?></td>
+                                                <td class="text-capitalize"><?= $data['kode_gejala'] ?></td>
+                                                <td class="text-capitalize"><?= $data['gejala'] ?></td>
                                                 <td>
                                                     <div class="btn-group gap-2 ">
-                                                        <a href="form/edit_form_stadium.php?edit=<?= $data['id'] ?>&kode=<?= $data['kode_stadium'] ?>&action=editstadium" class="btn btn-warning"><i class="bi bi-pencil-square"></i></i></a>
-                                                        <a href="../php/delete.php?id=<?= $data['id'] ?>&action=deletestadium" class="btn btn-danger"><i class="bi bi-trash3"></i></a>
+                                                        <a href="form/edit_form_gejala.php?edit=<?= $data['id'] ?>&kode=<?= $data['kode_gejala'] ?>&action=editgejala" class="btn btn-warning"><i class="bi bi-pencil-square"></i></i></a>
+                                                        <a href="../php/delete.php?id=<?= $data['id'] ?>&action=deletegejala" class="btn btn-danger"><i class="bi bi-trash3"></i></a>
                                                     </div>
                                                 </td>
                                             </tr>
@@ -107,8 +110,8 @@ $query = mysqli_query($db, "SELECT * FROM data_stadium");
 
     <section class="modal-addnew" id="section-model">
         <form action="../php/create.php" method="POST">
-            <input type="hidden" name="action" value="addstadium">
             <div class="modal-addnew">
+                <input type="hidden" name="action" value="addgejala">
                 <div class="modal fade" id="addNewData" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
                     <div class="modal-dialog modal-dialog-centered">
                         <div class="modal-content">
@@ -117,12 +120,12 @@ $query = mysqli_query($db, "SELECT * FROM data_stadium");
                             </div>
                             <div class="modal-body">
                                 <div class="mb-3">
-                                    <label for="kodeStadium" class="form-label">Kode Stadium</label>
-                                    <input type="text" class="form-control" id="kodeStadium" placeholder="Kode Stadium" name="kode_stadium">
+                                    <label for="kodeGejala" class="form-label">Kode Gejala</label>
+                                    <input type="text" class="form-control" id="kodeGejala" placeholder="Kode Gejala" name="kode_gejala">
                                 </div>
                                 <div class="mb-3">
-                                    <label for="stadium" class="form-label">Stadium</label>
-                                    <input type="text" class="form-control" id="stadium" placeholder="stadium" name="stadium">
+                                    <label for="gejala" class="form-label">Gejala</label>
+                                    <input type="text" class="form-control" id="gejala" placeholder="Gejala" name="gejala">
                                 </div>
                             </div>
                             <div class="modal-footer">
@@ -138,6 +141,5 @@ $query = mysqli_query($db, "SELECT * FROM data_stadium");
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
     <script src="../assets/javascripts/dashboard.js?v=<?php time() ?>"></script>
 </body>
-
 
 </html>

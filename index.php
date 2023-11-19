@@ -27,11 +27,6 @@
                             <li class="nav-item">
                                 <a class="nav-link" href="konsultasi.php">Konsultasi</a>
                             </li>
-                            <li class="nav-item ms-3">
-                                <button class="btn btn-mode" id="dark-button">
-                                    <i class="bi bi-moon"></i>
-                                </button>
-                            </li>
                         </ul>
                     </div>
                 </div>
@@ -207,7 +202,22 @@
                                 </div>
                             </div>
                         </div>
-                        
+                        <div class="slider-card ">
+                            <div class="row p-4">
+                                <div class="profile d-flex justify-content-start align-items-center">
+                                    <div class="images">
+                                        <img src="assets/images/avatar-2.png" alt="">
+                                    </div>
+                                    <p class="m-0 ms-3 fw-bolder">Adzin Zaky <br> <span class="fw-medium">User</span></p>
+                                </div>
+                                <div class="bintang w-50 mt-3">
+                                    <img src="assets/images/rating-icon.png" alt="">
+                                </div>
+                                <div class="message mt-3">
+                                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolorem magnam impedit adipisci magni. Soluta, tenetur suscipit consectetur animi dolores repudiandae?</p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
