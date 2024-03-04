@@ -128,11 +128,12 @@ html {
     width: max-content;
 }
 
-.dashboard .row .content .row .admin-content .container-fluid .btn-add-data {
+.dashboard .row .content .row .admin-content .container-fluid .btn-add-data{
     background: linear-gradient(280deg,#4365DE, #001D83);
     color: var(--color-white);
     border: none;
 }
+
 
 .dashboard .row .content .row .admin-content .container-fluid .tabel-data table {
     overflow: hidden;
@@ -151,6 +152,18 @@ html {
     padding: 10px 0;
 }
 
+.dashboard .row .side-bar .container-fluid .menu-navigation {
+    width: 80%;
+    margin: 0 auto;
+    background: linear-gradient(280deg,#4365DE, #001D83);
+    border-radius: 4px;
+}
+
+.dashboard .row .side-bar .container-fluid .menu-navigation .btnn a {
+    color: var(--color-white);
+    text-decoration: none;
+    border: none;
+}
 
 #alertDashboard {
     position: absolute;

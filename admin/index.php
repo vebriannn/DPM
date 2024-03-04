@@ -2,6 +2,12 @@
 
 require "../php/db.php";
 
+session_start();
+
+if(!isset($_SESSION['login'])) {
+    header("Location: ../auth");
+    exit;
+}
 
 $query = mysqli_query($db, "SELECT * FROM data_hiv");
 
@@ -62,7 +68,7 @@ $query = mysqli_query($db, "SELECT * FROM data_hiv");
                                 </div>
                             </div>
                             <div class="col-5 d-flex justify-content-end gap-4 ">
-                                <button class="btn btn-sm fs-6 px-2 p-0 m-0" type="button" data-bs-toggle="dropdown"><span><i class="bi bi-person-fill-check fs-4"></i></span> Jasim </button>
+                                <button class="btn btn-sm fs-6 px-2 p-0 m-0" type="button" data-bs-toggle="dropdown"><span><i class="bi bi-person-fill-check fs-4"></i></span> <?= $_SESSION['nama']?> </button>
                                 <ul class="dropdown-menu mt-2">
                                     <li><a class="dropdown-item fs-6" href="../php/logout.php">Logout</a></li>
                                 </ul>

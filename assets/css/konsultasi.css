@@ -131,7 +131,8 @@ body {
 }
 
 .section2 {
-    height: 80vh;
+    height: max-content;
+    padding-bottom: 50px;
     margin-top: 60px;
     /* display: none; */
 }

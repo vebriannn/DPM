@@ -18,7 +18,7 @@ $result = mysqli_query($db, $query);
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
-    <link rel="stylesheet" href="assets/css/konsultasi.css?v=<?php time()?>">
+    <link rel="stylesheet" href="assets/css/konsultasi.css">
 </head>
 
 <body>
@@ -80,15 +80,20 @@ $result = mysqli_query($db, $query);
                         <button type="button" class="btn btn-hasil fw-bold d-none" id="btn-hasil" >Lihat Hasil</button>
                     </div>
                 </div>
-                
-                <ul class="list-gejala" id="list-gejala">
-
-                </ul>
+                <div class="hasil-diagnosa text-white p-3 pt-0 pb-0 ">
+                    <h5 class="penyakit fs-5 text-uppercase d-none">Penyakit : </h5>
+                    <h5 class="gejala fs-5 text-uppercase d-none mt-2">Gejala Terinput : </h5>
+                    <ul class="list-gejala" id="list-gejala">
+                    </ul>
+                    <h5 class="pencegahan fs-5 mt-2 text-uppercase d-none">langkah Penjegahan : </h5>
+                    <ul class="list-pencegahan d-none" id="list-pencegahan">
+                    </ul>
+                </div>
             </div>
         </div>
     </section>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
-    <script src="assets/javascripts/konsultasi.js"></script>
+    <script src="assets/javascripts/konsultasi.js?v=<?php time()?>"></script>
 </body>
 
 </html>

@@ -2,6 +2,12 @@
 
 require "../php/db.php";
 
+session_start();
+
+if (!isset($_SESSION['login'])) {
+    header("Location: ../auth");
+    exit;
+}
 
 $query = mysqli_query($db, "SELECT * FROM data_stadium");
 
@@ -17,7 +23,7 @@ $query = mysqli_query($db, "SELECT * FROM data_stadium");
     <title>Dashboard || Penyakit</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
-    <link rel="stylesheet" href="../assets/css/dasboard.css?v=<?php time()?>">
+    <link rel="stylesheet" href="../assets/css/dasboard.css?v=<?php time() ?>">
 </head>
 
 <body>
@@ -60,9 +66,11 @@ $query = mysqli_query($db, "SELECT * FROM data_stadium");
                                     <input type="search" class="form-control shadow-none" placeholder="Search" controls="tabelDataa">
                                 </div>
                             </div>
-                            <div class="col-5 d-flex justify-content-end gap-4 d-none">
-                                <a href="" class="btn btn-primary opacity-50" >Lihat Gejala</a>
-                                <a href="dashboard_stadium.php" class="btn btn-primary ">Lihat Stadium</a>
+                            <div class="col-5 d-flex justify-content-end gap-4 ">
+                                <button class="btn btn-sm fs-6 px-2 p-0 m-0" type="button" data-bs-toggle="dropdown"><span><i class="bi bi-person-fill-check fs-4"></i></span> <?= $_SESSION['nama'] ?> </button>
+                                <ul class="dropdown-menu mt-2">
+                                    <li><a class="dropdown-item fs-6" href="../php/logout.php">Logout</a></li>
+                                </ul>
                             </div>
                         </div>
                     </div>
