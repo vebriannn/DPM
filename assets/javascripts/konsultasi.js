@@ -28,7 +28,7 @@ var index = 0;
 var items = [];
 
 // mengambil data dari db
-fetch('http://localhost/PHP/soc/user/api.php').then(res => res.json())
+fetch('http://localhost/PHP/DPM/user/api.php').then(res => res.json())
 .then(data => {
 
     // menampilkan data untuk pertama kali
